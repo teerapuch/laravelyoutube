@@ -35,6 +35,7 @@ Route::get('movie','MovieController@index');
 Route::get('song','Music\SongController@index');
 Route::get('songplay','Music\SongController@play');
 Route::get('band','Music\SongController@band');
+Route::get('show','Music\SongController@show');
 
 // Regular Expression
 Route::get('book/{name}', function($name) {

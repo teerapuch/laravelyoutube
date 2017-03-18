@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Music;
 
+use DB;
 use App\Http\Controllers\Controller;
 
 /**
@@ -25,6 +26,7 @@ class SongController extends Controller
     {
         //return view('song/player');
         /*
+        $band = DB::table('blog_tbl')->get();
         return view('song/player')
         ->with('band', 'OASIS')
         ->with('album','Morning');
@@ -48,6 +50,16 @@ class SongController extends Controller
     {
         $aCss = array('css/song/style.css');
         $aScript = array('js/song/main.js');
+
+        // $band = DB::table('blog_tbl')->find('3');
+        // $band = DB::select('select title,blog_th from blog_tbl where deleted = ?', [0]);
+        //$band = DB::insert('insert into blog_tbl (title, blog_th) values (?, ?)', ['green day', 'best of rock']);
+        // $band_up = DB::update('update blog_tbl set blog_th = "Best of rock band" where title = ?', ['green day']);
+        //$band_del = DB::delete('delete from blog_tbl where title = ?', ['green day']);
+        $band = DB::table('blog_tbl')->get();
+
+        //dd($band);
+        /*
         $this->data = array(
             'title' => 'Music Band',
             'band' => 'Metallica',
@@ -55,7 +67,26 @@ class SongController extends Controller
             'style' => $aCss,
             'script' => $aScript
         );
+        */
+        $this->data = array(
+            'band' => $band,
+            'style' => $aCss,
+            'script' => $aScript
+        );
         return view('song/band', $this->data);
+    }
+
+    public function show()
+    {
+        $aCss = array('css/song/style.css');
+        $aScript = array('js/song/main.js');
+        $blog = DB::table('blog_tbl')->get();
+        $data = array(
+            'blog' => $blog,
+            'style' => $aCss,
+            'script' => $aScript
+        );
+        return view('song.show', $data);
     }
 
 }
