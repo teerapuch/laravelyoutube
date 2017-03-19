@@ -2,6 +2,10 @@
 
 @section('content')
     <h1>Book Shelf</h1>
+    <!-- will be used to show any messages -->
+    @if (Session::has('message'))
+        <div class="alert alert-info">{{ Session::get('message') }}</div>
+    @endif
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -28,9 +32,23 @@
                             'class' => 'btn btn-primary')
                             )
                         }}
+                        {{ Html::link('book/'.$book->id.'/edit', 'Edit', array(
+                            'class' => 'btn btn-primary')
+                            )
+                        }}
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+
+    <div class="row">
+        <div class="col-xs-4">
+            {{ Html::link('book/create', 'Add New', array(
+                'class' => 'btn btn-primary'
+                ))
+            }}
+        </div>
+        <div class="col-xs-8"></div>
+    </div>
 @endsection

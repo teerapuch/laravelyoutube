@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\book; // call model book
 use Illuminate\Http\Request;
+use Session; // call session
+//use Request; // call Facades Request
+//use Validator; // call Facades Validator
 
 class BookController extends Controller
 {
@@ -37,6 +40,7 @@ class BookController extends Controller
     public function create()
     {
         //
+        return view('book/create');
     }
 
     /**
@@ -47,7 +51,24 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // https://laravel.com/docs/5.3/validation
+        $this->validate($request, [
+            'title'  => 'required|max:100',
+            'price'  => 'required|numeric',
+            'author' => 'required|max:100'
+        ]);
+
+        $book = new Book;
+
+        $book->title     = $request->title;
+        $book->isbn      = $request->isbn;
+        $book->price     = $request->price;
+        $book->author    = $request->author;
+        $book->publisher = $request->publisher;
+
+        $book->save();
+
+        return redirect('book');
     }
 
     /**
@@ -74,7 +95,11 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = book::find($id);
+        $data = array(
+            'book' => $book,
+        );
+        return view('book/edit',$data);
     }
 
     /**
@@ -86,7 +111,27 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // https://laravel.com/docs/5.3/validation
+        $this->validate($request, [
+            'title'  => 'required|max:100',
+            'price'  => 'required|numeric',
+            'author' => 'required|max:100'
+        ]);
+
+        // store
+        $book = Book::find($id);
+        $book->title     = $request->title;
+        $book->isbn      = $request->isbn;
+        $book->price     = $request->price;
+        $book->author    = $request->author;
+        $book->publisher = $request->publisher;
+        // and save to database
+        $book->save();
+
+        // redirect
+        Session::flash('message', 'Successfully updated book!');
+        return redirect('book');
+
     }
 
     /**

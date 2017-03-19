@@ -8,9 +8,10 @@ class book extends Model
 {
     // Whitelist
     protected $fillable = [
-        'title', 'isbn', 'price', 'author', 'publisher', 'created_at', 'updated_at'
+        'title', 'isbn', 'price', 'author', 'publisher'
     ];
 
     // Blackist
     // protected $guarded = ['id'];
+
 }
