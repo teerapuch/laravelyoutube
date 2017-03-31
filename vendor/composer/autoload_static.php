@@ -312,6 +312,8 @@ class ComposerStaticInit262285b9e0f3675b111bad23c1e7e9b5
         'CreateBlogTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_24_175723_create_blog_table.php',
         'CreateBookTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_18_203708_create_book_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePublisherTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_31_170343_create_publisher_table.php',
+        'CreatePublishersTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_31_172826_create_publishers_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',

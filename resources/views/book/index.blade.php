@@ -25,7 +25,13 @@
                     <td>{{$book->isbn}}</td>
                     <td>{{$book->price}}</td>
                     <td>{{$book->author}}</td>
-                    <td>{{$book->publisher}}</td>
+                    <td>
+                        @foreach ($publishers as $p)
+                            @if ($book->publisher == $p->id)
+                                {{ $p->publisher }}
+                            @endif
+                        @endforeach
+                    </td>
                     <td>{{$book->created_at}}</td>
                     <td>
                         {{ Html::link('book/'.$book->id, 'View', array(

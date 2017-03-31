@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\book; // call model book
+use App\publisher; // call model publisher
 use Illuminate\Http\Request;
 use Session; // call session
 //use Request; // call Facades Request
@@ -21,9 +22,11 @@ class BookController extends Controller
         $aCss = array('css/book/style.css');
         $aScript = array('js/book/main.js');
         $books = book::all();
+        $publishers = publisher::all();
 
         $data = array(
             'books' => $books,
+            'publishers' => $publishers,
             'style' => $aCss,
             'script' => $aScript
         );
@@ -95,11 +98,14 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        $book = book::find($id);
-        $data = array(
-            'book' => $book,
-        );
-        return view('book/edit',$data);
+        if($id !== '') {
+            $book = book::find($id);
+            $data = array(
+                'book' => $book,
+            );
+            return view('book/create',$data);
+        }
+
     }
 
     /**

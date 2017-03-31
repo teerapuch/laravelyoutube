@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password'
     ];
 
     /**
@@ -24,17 +24,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token'
     ];
 }
-
-C:\xampp\php;
-C:\php\composer;
-C:\Users\sync\AppData\Roaming\npm;
-C:\Users\sync\AppData\Local\.meteor\;
-C:\Users\sync\AppData\Local\atom\bin;
-C:\Users\sync\AppData\Roaming\Composer\vendor\bin;
-C:\Python34;
-C:\Program Files\Docker Toolbox;
-
-C:\xampp\php;C:\php\composer;C:\Users\sync\AppData\Roaming\npm;C:\Users\sync\AppData\Local\.meteor\;C:\Users\sync\AppData\Local\atom\bin;C:\Users\sync\AppData\Roaming\Composer\vendor\bin;C:\Python34;C:\Program Files\Docker Toolbox;

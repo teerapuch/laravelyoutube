@@ -9,6 +9,8 @@ return array(
     'CreateBlogTable' => $baseDir . '/database/migrations/2017_02_24_175723_create_blog_table.php',
     'CreateBookTable' => $baseDir . '/database/migrations/2017_03_18_203708_create_book_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePublisherTable' => $baseDir . '/database/migrations/2017_03_31_170343_create_publisher_table.php',
+    'CreatePublishersTable' => $baseDir . '/database/migrations/2017_03_31_172826_create_publishers_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

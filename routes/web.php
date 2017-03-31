@@ -38,6 +38,7 @@ Route::get('band','Music\SongController@band');
 Route::get('show','Music\SongController@show');
 //Route::get('book/{id}','bookController@index');
 Route::resource('book', 'bookController');
+Route::resource('publisher', 'publisherController');
 
 // Regular Expression
 Route::get('book/{name}', function($name) {
