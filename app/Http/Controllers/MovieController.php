@@ -12,7 +12,7 @@ class MovieController extends Controller
 
     function __construct()
     {
-        # code...
+        // code...
     }
 
     public function index()
@@ -53,7 +53,7 @@ class MovieController extends Controller
             'title' => 'Movie Page',
             'categories' => 'Drama'
         );
-        return view('movie/list',$this->data);
+        return view('movie/list', $this->data);
     }
 
 }
