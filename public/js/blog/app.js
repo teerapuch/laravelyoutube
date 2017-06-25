@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#addComment').click(function(){
+    $('.addComment').click(function(){
         $("#modal").modal('show');
     });
 });
