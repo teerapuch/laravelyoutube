@@ -3000,12 +3000,12 @@
         "version_normalized": "0.9.8.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/padraic/mockery.git",
+            "url": "https://github.com/mockery/mockery.git",
             "reference": "1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/padraic/mockery/zipball/1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855",
+            "url": "https://api.github.com/repos/mockery/mockery/zipball/1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855",
             "reference": "1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855",
             "shasum": ""
         },

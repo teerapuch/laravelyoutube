@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Blog;
+use App\Comment;
 
 class BlogController extends Controller
 {
@@ -14,7 +16,16 @@ class BlogController extends Controller
     public function index()
     {
         //
-        return "Hello Blog";
+        $script = array('js/blog/app.js');
+
+        $blog = Blog::all()->take(3);
+        $comment = Comment::all();
+        $data = array(
+            'script' => $script,
+            'blog' => $blog,
+            'comment' => $comment
+        );
+        return view("blog.index",$data);
     }
 
     /**
