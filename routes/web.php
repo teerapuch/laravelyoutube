@@ -10,6 +10,8 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::resource('lib','LibController');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -58,3 +60,5 @@ Route::match(['get','post'], 'bill', function() {
 });
 
 Route::any('poll','Auth\LoginController@poll');
+
+Route::resource('code','CodeController');
