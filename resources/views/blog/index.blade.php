@@ -76,7 +76,8 @@
 
 <div class="modal fade" id="modal">
     <div class="modal-dialog">
-        {{ Form::open([ 'method'  => 'post', 'route' => [ 'comment.store']]) }}
+        {{ Form::open([ 'method'  => 'post', 'action' => 'CommentController@store']) }}
+        {{ Form::hidden('blog_id', '1') }}
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close"

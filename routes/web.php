@@ -27,6 +27,8 @@ Route::get('blog/{id}', function($id) {
 });
 */
 Route::resource('blog', 'BlogController');
+Route::get('comment', 'CommentController@index');
+Route::post('comment', 'CommentController@store');
 
 // Optional Parameters
 Route::get('profile/{id?}', function($id=null) {
