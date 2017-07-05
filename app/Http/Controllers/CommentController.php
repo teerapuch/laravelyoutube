@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Blog;
-use App\Comments;
+use App\Http\Controllers\Controller;
 
-class BlogController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blog = Blog::all()->take(3);
-        $comment = Comments::all();
-        $data = array(
-            'blog' => $blog,
-            'comment' => $comment
-        );
-        return view('blog.index', $data);
+        //
     }
 
     /**
