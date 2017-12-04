@@ -21,13 +21,9 @@ Route::get('hello', function() {
 });
 
 // Required Parameters
-/*
 Route::get('blog/{id}', function($id) {
     return "Welcome to Blog ID : " . $id;
 });
-*/
-Route::resource('blog', 'BlogController');
-
 
 // Optional Parameters
 Route::get('profile/{id?}', function($id=null) {
