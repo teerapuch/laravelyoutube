@@ -7,7 +7,7 @@
         {{ Session::get('message') }}
     </div>
 @endif
-<h2>{{ Session::get('english') }}</h2>
+<h2>{{ Cookie::get('language') }}</h2>
 <table class="table table-bordered">
     <thead>
         <tr>
