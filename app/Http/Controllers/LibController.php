@@ -16,6 +16,9 @@ class LibController extends Controller
     public function index()
     {
         $lib = Lib::all();
+        //Session::put('language','Thai');
+        //session(['english' => 'good', 'japanese' => 'poor']);
+        //Session::flush();
         $data = array(
             'lib' => $lib
         );
